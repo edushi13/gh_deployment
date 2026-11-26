@@ -28,7 +28,8 @@ jobs:
       - run: echo "- Simulate and test the artifact"
 
   deploy-development:
-    environment: build
+    needs: build
+    environment: Development
     runs-on: ubuntu-latest
     steps:
       - run: echo "- Auto-deploy the artifact to the development environment"
